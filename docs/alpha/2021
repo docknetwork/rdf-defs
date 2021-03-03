@@ -1,0 +1,16 @@
+@prefix dockalpha: <https://rdf.dock.io/alpha/2021#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+dockalpha:mayClaim a rdf:Property ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range dockalpha:ClaimFilter ;
+    rdf:comment "A statement of scoped trust." .
+
+dockalpha:ANYCLAIM a dockalpha:ClaimFilter ;
+    rdf:comment "The least strict claim filter. Allows any claim." .
+
+dockalpha:ClaimFilter a rdf:Class ;
+    rdf:comment "Filter over rdf:Statement/claim/triple." ;
+    rdf:comment "ClaimFilter is essentially an allow-set of triples." ;
+    rdf:comment "ClaimFilter is *not* a dissallow-set and should not be treated as such." .
